@@ -1,0 +1,48 @@
+
+Switch #1 On:
+	0x115533
+	"0001 0001 0101 0101 0011 0011"
+	"0F0FFFFF0101";
+
+Switch #5 Off:
+	0x117503
+	"0001 0001 0111 0101 0000 0011"
+	"0F0FF1FF0001"
+	Addr: 0F0FF1FF, Data: 0001
+
+
+Code:
+
+	// Protocol 1, Pulsewidth 189us
+	mySwitch.setProtocol(1, 189);
+
+	// Switch #1 on/off
+	mySwitch.send(0x115533, 24);
+	delay(1000);
+	mySwitch.send(0x11553C, 24);
+	delay(1000);
+
+	// Switch #2 on/off
+	mySwitch.send(0x1155C3, 24);
+	delay(1000);
+	mySwitch.send(0x1155CC, 24);
+	delay(1000);
+
+	// Switch #3 on/off
+	mySwitch.send(0x115703, 24);
+	delay(1000);
+	mySwitch.send(0x11570C, 24);
+	delay(1000);
+
+	// Switch #4 on/off
+	mySwitch.send(0x115D03, 24);
+	delay(1000);
+	mySwitch.send(0x115D0C, 24);
+	delay(1000);
+
+	// Switch #5 on/off
+	mySwitch.send(0x117503, 24);
+	delay(1000);
+	mySwitch.send(0x11750C, 24);
+	delay(1000);
+ 
