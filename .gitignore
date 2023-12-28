@@ -1,0 +1,42 @@
+# Editor Files
+.*.sw?
+*.lck
+.~lock*
+.local.vimrc
+session.vim
+
+# Source Output Files
+*.o
+*.a
+*.bin
+*.elf
+*.hex
+*.noi
+*.lst
+*.rel
+*.sym
+*.load
+*.send
+target/
+Cargo.lock
+
+# EDA Output Files
+*.gbr
+*.drl
+*gbrjob
+*-bak
+*.bak
+*.bck
+*.dsn
+*.log
+fp-info-cache
+**/hardware/*/*-backups
+
+# Binary files
+*.img
+
+# Build Directory
+/build/
+
+# Miscellaneous
+/junk/
