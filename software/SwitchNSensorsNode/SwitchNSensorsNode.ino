@@ -8,10 +8,10 @@
 
 #include <DHT.h>
 
-#define PIN_ONE_WIRE_BUS	3
-#define PIN_RCSWITCH315		4
-#define PIN_HUMIDITY		5
-#define PIN_RCSWITCH433		6
+#define PIN_ONE_WIRE_BUS	5
+#define PIN_RCSWITCH315		6
+#define PIN_HUMIDITY		3
+#define PIN_RCSWITCH433		7
 
 #define SENSORID_RCSWITCH_W1	1
 #define SENSORID_RCSWITCH_E1	2
@@ -39,8 +39,8 @@ DallasTemperature sensors(&oneWire);
 float lastTemperature[MAX_ATTACHED_DS18B20];
 int numSensors = 0;
 
-DHT dht;
-float lastHumidity;
+//DHT dht;
+//float lastHumidity;
 
 MyMessage msg_temp(0, V_TEMP);
 MyMessage msg_hum(0, V_HUM);
@@ -80,7 +80,7 @@ void setup()
 		gw.present(SENSORID_TEMP + i, S_TEMP);
 	}
 
-	dht.setup(PIN_HUMIDITY);
+	//dht.setup(PIN_HUMIDITY);
 	gw.present(SENSORID_HUMIDITY, S_HUM);
 }
 
@@ -108,11 +108,11 @@ void loop()
 			}
 		}
 
-		float humidity = dht.getHumidity();
-		if (lastHumidity != humidity) {
-			gw.send(msg_hum.setSensor(SENSORID_HUMIDITY).set(humidity, 1));
-			lastHumidity = humidity;
-		}
+		//float humidity = dht.getHumidity();
+		//if (lastHumidity != humidity) {
+		//	gw.send(msg_hum.setSensor(SENSORID_HUMIDITY).set(humidity, 1));
+		//	lastHumidity = humidity;
+		//}
 	}
 	//gw.sleep(SLEEP_TIME);
 }
