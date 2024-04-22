@@ -30,7 +30,7 @@
 #define INCLUSION_MODE_PIN 3 // Digital pin used for inclusion mode button
 
 
-MyGateway gw(DEFAULT_CE_PIN, DEFAULT_CS_PIN, INCLUSION_MODE_TIME, INCLUSION_MODE_PIN, A5, A4, A3);
+MyGateway gw(DEFAULT_CE_PIN, DEFAULT_CS_PIN, INCLUSION_MODE_TIME, INCLUSION_MODE_PIN); //, A5, A4, A3);
 
 char inputString[MAX_RECEIVE_LENGTH] = "";    // A string to hold incoming commands from serial/ethernet interface
 int inputPos = 0;
